@@ -1,4 +1,5 @@
 "use client";
+
 import { Button } from "flowbite-react";
 
 export function EmailVerificationOTPForm() {
@@ -162,7 +163,6 @@ export function EmailVerificationOTPForm() {
                 <Button
                   type="submit"
                   size="xl"
-                  className="[&>span]:text-sm"
                   className="bg-ghred-500 hover:bg-ghred-600 w-full"
                 >
                   Verify account

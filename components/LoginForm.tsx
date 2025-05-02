@@ -1,3 +1,5 @@
+"use client";
+
 import { Button, Card, Checkbox, Label, TextInput } from "flowbite-react";
 
 export function LoginForm() {
