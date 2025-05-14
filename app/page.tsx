@@ -1,4 +1,4 @@
-import { DarkThemeToggle } from "flowbite-react";
+import { DarkThemeToggle } from "flowbite-react/components/DarkThemeToggle";
 
 export default function Home() {
   return (

@@ -1,8 +1,17 @@
 "use client";
 
-import { Button, Card, Checkbox, Label, TextInput } from "flowbite-react";
+import React from 'react';
+import Loading from '@/components/Loader/Loading';
+import useAuth from '@/hooks/useAuth';
+import { Button } from "flowbite-react/components/Button";
+import { Card } from "flowbite-react/components/Card";
+import { Checkbox } from "flowbite-react/components/Checkbox";
+import { Label } from "flowbite-react/components/Label";
+import { TextInput } from "flowbite-react/components/TextInput";
 
-export function LoginForm() {
+function LoginForm() {
+  const { login, loading } = useAuth()
+
   return (
     <section className="bg-gray-50 dark:bg-gray-900">
       <div className="mx-auto flex flex-col items-center justify-center px-6 py-8 md:h-screen lg:py-0">
@@ -12,7 +21,7 @@ export function LoginForm() {
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white md:text-2xl">
               Sign in to your account
             </h1>
-            <form className="space-y-4 md:space-y-6" action="#">
+            <form className="space-y-4 md:space-y-6" action="#" onSubmit={login}>
               <div>
                 <Label htmlFor="email" className="mb-2 block dark:text-white">
                   Your email
@@ -65,7 +74,7 @@ export function LoginForm() {
                 type="submit"
                 className="bg-ghred-500 hover:bg-ghred-600 w-full"
               >
-                Sign in
+                {loading ? <Loading /> : "Sign in"}
               </Button>
               <p className="text-sm font-medium text-gray-900 dark:text-white">
                 Don’t have an account yet?&nbsp;
@@ -83,3 +92,5 @@ export function LoginForm() {
     </section>
   );
 }
+
+export default React.memo(LoginForm)

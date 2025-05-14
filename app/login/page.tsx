@@ -1,4 +1,6 @@
-import { LoginForm } from "@/components/LoginForm";
+import React from "react";
+
+const LoginForm = React.lazy(() => import("@/app/login/components/LoginForm"));
 
 export default function LoginPage() {
   return (
